@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App5.Views.PaymentPage"
+             Title="RentaLux"
+             BackgroundColor="White">
+
+    <StackLayout Padding="20" Spacing="15">
+        <!-- Title -->
+        <Label Text="Payment Information"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="Gray"
+               HorizontalOptions="Center" />
+
+        <!-- Cardholder's Name -->
+        <Frame CornerRadius="10" Padding="5" BackgroundColor="#F2F2F2">
+            <Entry Placeholder="Name on card" FontSize="16" />
+        </Frame>
+
+        <!-- Card Number -->
+        <Frame CornerRadius="10" Padding="5" BackgroundColor="#F2F2F2">
+            <Entry Placeholder="Card number" FontSize="16" Keyboard="Numeric" />
+        </Frame>
+
+        <!-- Expiry Date and Security Code -->
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <Frame CornerRadius="10" Padding="5" BackgroundColor="#F2F2F2" WidthRequest="150">
+                <Entry Placeholder="MM / YY" FontSize="16" Keyboard="Numeric" />
+            </Frame>
+            <Frame CornerRadius="10" Padding="5" BackgroundColor="#F2F2F2" WidthRequest="150">
+                <Entry Placeholder="Security code" FontSize="16" Keyboard="Numeric" />
+            </Frame>
+        </StackLayout>
+
+        <!-- ZIP/Postal Code -->
+        <Frame CornerRadius="10" Padding="5" BackgroundColor="#F2F2F2">
+            <Entry Placeholder="ZIP/Postal code" FontSize="16" Keyboard="Default" />
+        </Frame>
+
+        <!-- Price Label -->
+        <Label Text="{Binding Price, StringFormat='TotalPrice: {0:C}'}"
+               FontSize="18"
+               FontAttributes="Bold"
+               TextColor="Gray"
+               HorizontalOptions="Center" />
+
+        <!-- Pay Button -->
+        <Button Text="Pay"
+                FontSize="18"
+                BackgroundColor="#2196F3"
+                TextColor="White"
+                CornerRadius="10"
+                HorizontalOptions="FillAndExpand"
+                HeightRequest="50"
+                Clicked="OnPayClicked" />
+
+        <!-- Payment Logos -->
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Start" Padding="10">
+            <Label Text="We Accept" FontSize="14" TextColor="Gray" HorizontalOptions="Center" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+                <Image Source="mastercard.png" WidthRequest="40" HeightRequest="40" />
+                <Image Source="visa.png" WidthRequest="40" HeightRequest="40" />
+                <Image Source="intarac.png" WidthRequest="40" HeightRequest="40" />
+                <!-- Add other payment icons as needed -->
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

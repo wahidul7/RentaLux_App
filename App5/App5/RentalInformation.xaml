@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App5.Views.RentalInformation"
+             Title="RentaLux"
+             BackgroundImageSource="bg4.webp">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="30" Spacing="20">
+                <!-- Page Title -->
+                <Label Text="Rental Information" 
+                       FontSize="Large" 
+                       FontAttributes="Bold" 
+                       TextColor="White" 
+                       HorizontalOptions="Center" />
+
+                <!-- Pickup Location Dropdown -->
+                <Frame Padding="20" 
+                       CornerRadius="10" 
+                       HasShadow="True" 
+                       BackgroundColor="White">
+                    <StackLayout Spacing="15">
+                        <Label Text="Select Pickup Location" FontSize="Medium" FontAttributes="Bold" />
+                        <Picker x:Name="pickupLocationPicker" Title="Select Location" />
+
+                        <!-- Select Pick-Up Date -->
+                        <Label Text="Select Pick-Up Date" FontSize="Medium" FontAttributes="Bold" />
+                        <DatePicker x:Name="pickUpDatePicker" DateSelected="OnDateSelected" />
+
+                        <!-- Select Return Date -->
+                        <Label Text="Select Return Date" FontSize="Medium" Margin="0,20,0,0" FontAttributes="Bold" />
+                        <DatePicker x:Name="returnDatePicker" DateSelected="OnDateSelected" />
+
+                        <!-- Estimated Price -->
+                        <Label Text="Estimated Price" FontSize="Medium" Margin="0,20,0,0" FontAttributes="Bold" />
+                        <Label x:Name="priceEstimate" FontSize="Medium" FontAttributes="Bold" TextColor="#007BFF" />
+
+                        <!-- Proceed to Payment Button -->
+                        <Button Text="Proceed to Payment" 
+                                BackgroundColor="#007BFF" 
+                                TextColor="White" 
+                                CornerRadius="5" 
+                                FontAttributes="Bold"
+                                Clicked="OnPaymentButtonClicked"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
